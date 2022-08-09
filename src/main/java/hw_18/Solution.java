@@ -14,10 +14,44 @@ public class Solution {
         map.put("D", 500);
         map.put("M", 1000);
 
+        int exceptions = 0;
+
+        if (s.contains("IV")) {
+            s = s.replace("IV", "");
+            exceptions += 4;
+        }
+
+        if (s.contains("IX")) {
+            s = s.replace("IX", "");
+            exceptions += 9;
+        }
+
+        if (s.contains("XL")) {
+            s = s.replace("XL", "");
+            exceptions += 40;
+        }
+
+        if (s.contains("XC")) {
+            s = s.replace("XC", "");
+            exceptions += 90;
+        }
+
+        if (s.contains("CD")) {
+            s = s.replace("CD", "");
+            exceptions += 400;
+        }
+
+        if (s.contains("CM")) {
+            s = s.replace("CM", "");
+            exceptions += 900;
+        }
+
         long result = Arrays
                 .stream(s.split(""))
                 .collect(Collectors.summarizingInt(map::get))
                 .getSum();
+
+        result += exceptions;
 
         return (int) result;
     }

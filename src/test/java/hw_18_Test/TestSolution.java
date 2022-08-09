@@ -17,6 +17,11 @@ private Solution s;
     public void testTwo() {
         Assert.assertEquals(1666, s.romanToInt("MDCLXVI"));
     }
+
+    @org.junit.Test
+    public void testThree() {
+        Assert.assertEquals(1994, s.romanToInt("MCMXCIV"));
+    }
 }
 
 
