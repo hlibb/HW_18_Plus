@@ -22,6 +22,15 @@ private Solution s;
     public void testThree() {
         Assert.assertEquals(1994, s.romanToInt("MCMXCIV"));
     }
+
+    @org.junit.Test
+    public void testFour() {
+        Assert.assertEquals(4, s.romanToInt("IV"));
+    }
+    @org.junit.Test
+    public void testFive() {
+        Assert.assertEquals(994, s.romanToInt("CMXCIV"));
+    }
 }
 
 

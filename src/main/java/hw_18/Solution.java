@@ -46,6 +46,8 @@ public class Solution {
             exceptions += 900;
         }
 
+        if (s.equals("")) return exceptions;
+
         long result = Arrays
                 .stream(s.split(""))
                 .collect(Collectors.summarizingInt(map::get))
